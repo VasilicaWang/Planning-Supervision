@@ -1,0 +1,331 @@
+/* record begin */
+#record {
+    width: 100%;
+    background-color: rgba(255, 182, 182, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#record .add_record {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(250, 121, 121);
+    font: 700 18px/40px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.705);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+#record .add_record span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    background: url(../images/record_add_bj.png) no-repeat;  
+}
+
+#record .journal .journal_list,.MR_example {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#record .journal .journal_list .li_header {
+    width: 100%;
+    height: 30px;
+}
+
+#record .journal .journal_list .li_header h5 {
+    display: block; 
+    width: 50%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#record .journal .journal_list .li_header span {
+    display: block;
+    width: 50%;
+    float: right;
+    font-size: 12px;
+    text-align: right;
+}
+
+#record .journal .journal_list .edit {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+#record .journal .journal_list .edit input {
+    width: 40px;
+    height: 20px;
+    font: 100 12px/18px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    border: 1px dashed #f32e2e;
+    border-radius: 8px;
+    margin-left: 6px;
+    color: #fff;
+    background-color: rgba(253, 145, 145, 0.781);
+    outline: none;
+}
+
+.MR_example .li_header {
+    width: 100%;
+    height: 20px;
+}
+
+.MR_example {
+    background-color: rgba(252, 223, 223, 0.5);
+    color: #f37b8f;
+}
+
+.MR_example  h5 {
+    display: block; 
+    width: 70%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.MR_example span {
+    display: block;
+    width: 30%;
+    float: right;
+    font-size: 14px;
+    text-align: right;
+}
+
+.MR_example .edit {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+.MR_example .edit input {
+    width: 40px;
+    height: 20px;
+    font: 100 12px/18px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    border: 1px dashed #f32e2e;
+    border-radius: 8px;
+    margin-left: 6px;
+    color: #fff;
+    background-color: rgba(253, 145, 145, 0.5);
+    outline: none;
+}
+/* record end */
+
+/* 添加日志 begin */
+.make_record {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 200%;
+    background-color: #feaec7;
+    z-index: 99;
+    padding: 50px 20px;
+    display: none;
+}
+
+.make_record>img {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.content_title input {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(247, 111, 111, 0.849);
+    border: 0;
+    border: 2px dashed rgb(248, 91, 91);
+    border-radius: 20px;
+    text-align: center;
+    outline: none; 
+    font: 400 18px/50px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.706);
+    margin: 0 0 20px;
+}
+
+.content_body .textarea{
+    width: 100%;
+    min-height: 200px;
+    max-height: 1000px;    
+    outline: none;
+    border-radius: 20px;
+    font: 400 16px/24px Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    border: 12px solid transparent;
+    border-image: url(../images/plan_border_bj.png) 30 30 round;
+    padding: 10px 10px 30px;
+    overflow: auto;
+}
+
+.content_footer label {
+    margin-bottom: 10px;
+}
+
+.content_footer label span {
+    display: block;
+    width: 70%;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(241, 92, 92);
+    border-radius: 10px;
+    font: 400 16px/30px Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+
+.content_footer .result {
+    width: 100%;
+}
+
+.content_footer .result img {
+    width: 46%;
+    margin: 2%;
+    vertical-align: middle
+}
+
+.make_record .MR_save input {
+    font: 400 12px/20px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    width: 50px;
+    height: 25px;
+    background-color: rgba(247, 111, 111, 0.849);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+
+.make_record .MR_save {
+    width: 100%;
+    line-height: 30px;
+    text-align: right;
+    margin: 0 0 10px;
+}
+/* record end */
+
+/* 确定删除 begin */
+.sureToDel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 150%;
+    margin-left: -50%;
+    margin-top: -100%;
+    background-color: rgba(255, 255, 255, 0.795);
+    z-index: 999;
+    text-align: center;
+    display: none;
+}
+
+.sureToDel p {
+    width: 70%;
+    height: 70px;
+    margin: 200px auto 20px;
+    border: 2px dashed rgb(242, 93, 93);
+    border-radius: 20px;
+    background-color: rgba(236, 93, 117, 0.801);
+    font: 400 24px/70px Simsun, Arial, Helvetica, sans-serif;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.sureToDel input {
+    width: 50px;
+    height: 26px;
+    text-align: center;
+    background-color: rgba(247, 111, 111, 0.849);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    margin: 0 10px;
+    letter-spacing: 2px;
+}
+/* 确定删除 end */
+
+/* 查看日志 begin */
+.view_record {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 200%;
+    z-index: 99;
+    padding: 50px 20px;
+    background: url(../images/record_bj.jpg) repeat-y;
+    background-size: 100%;
+    display: none;
+}
+
+.view_record h3 {
+    text-align: center;
+    font-size: 22px;
+    font-family: "KaiTi", "Times New Roman", Times, Verdana;
+    color: rgba(0, 0, 0, 0.562);
+}
+
+.view_record span {
+    padding-top: 10px;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+
+.view_record hr {
+    height: 15px;
+    margin: 12px 0 22px;
+    border: 0;
+    background: url(../images/hr_bj.png) repeat-x;
+    background-size: contain;
+}
+
+.view_record div {
+    font: 100 14px/24px "MicroSoft YaHei";
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.view_record i {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-style: normal;
+}
+
+.view_img {
+    margin-top: 40px;
+}
+
+.view_img img {
+    width: 100%;
+}
+/* 查看日志 end */

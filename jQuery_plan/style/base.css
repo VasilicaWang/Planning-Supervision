@@ -1,0 +1,98 @@
+/* reset css 重置浏览器自带的默认的样式  目的是保持各种终端显示一致 */
+/* 1、所有的标签和伪类(before、after) */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    color: #666;
+    font-family: "Microsoft YaHei", sans-serif;
+    background: url(../images/body_bj.jpg) repeat;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+	outline: none;
+}
+a,button{cursor:pointer;} 
+
+
+.XS {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.XS>div {
+    margin-bottom: 20px;
+}
+
+/* header begin */
+.XS_header {
+    width: 100%;
+    height: 60px;
+    padding: 5px 20px 0 30px;
+    margin-bottom: 0;
+}
+
+.header_title {
+    height: 100%;
+    line-height: 100%;
+    float: left;
+}
+
+.header_title img {
+    height: 100%;
+}
+/* header end */
+
+/* nav begin */
+.XS_nav {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.XS_nav .nav li {
+    width: 30%;
+    float: left;
+    margin: 1.6%;
+    text-align: center;
+    border: 1px dashed #fa8072;
+    background-color: #f08f8f4d;
+    border-radius: 50%;
+    font-size: 18px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+
+.XS_nav .nav .current a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ec5d75;
+}
+/* nav end */
+
+/* footer begin */
+.XS .XS_footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.XS_footer img {
+    width: 60%;
+
+}
+/* footer end */

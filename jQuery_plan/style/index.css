@@ -1,0 +1,277 @@
+/* plan begin */
+.XS_plan {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    line-height: 25px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.XS_plan .add_plan {
+    width: 100%;
+    padding: 6px 0;
+    font: 400 16px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    text-align: center;
+    letter-spacing: 4px;
+    border: 1px dashed #ec5d75;
+    border-radius: 10px;
+    background-color: rgba(245, 135, 135, 0.8);
+    color: #fff;
+}
+
+.XS_plan .plan_list p {
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    color: #aaa;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.XS_plan .plan_list p b {
+    color: #666;
+}
+
+.XS_plan .plan_list li {
+    width: 100%;
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.XS_plan .plan_list li span {
+    display: block;
+    width: 80%;
+    text-indent: -0.5em;
+    margin-left: 10px;
+    letter-spacing: 2px;
+}
+
+.XS_plan .plan_list li span::first-letter {
+    font-size: 18px;
+    color: #ec5d75;
+}
+
+.XS_plan .plan_list li strong {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 15%;
+    height: 30px;
+    color: #ec5d75;
+    font-size: 24px;
+    text-align: right;
+}
+/* plan end */
+
+/* makePlan begin */
+.make_plan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(254, 174, 199);
+    z-index: 99;
+    text-align: center;
+    padding: 50px 20px;
+    display: none;
+}
+
+.make_plan input {
+    background-color: rgba(247, 111, 111, 0.849);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+
+.make_plan img {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.make_plan .MP_add {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6px 0;
+    letter-spacing: 4px;
+    font: 400 16px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    text-align: center;
+    border: 1px dashed #fc4967;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgba(247, 111, 111, 0.849);
+}
+
+.make_plan .MP_save {
+    width: 100%;
+    line-height: 30px;
+    text-align: right;
+    margin: 10px 0;
+}
+
+.make_plan .MP_save input {
+    width: 50px;
+    height: 26px;
+    margin: 0 6px;
+}
+
+.MP_list {
+    width: 100%;
+    padding: 10px;
+    line-height: 25px;
+    position: relative;
+}
+
+.MP_list li {
+    width: 100%;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    position: relative;
+    color: #666;
+    padding-bottom: 3px;
+    border-bottom: 1px dashed #fc4967;
+    letter-spacing: 2px;
+}
+
+.MP_list li span::first-letter {
+    font-size: 16px;
+    color: #fd2b4e;
+}
+
+.MP_list li span {
+    display: inline-block;
+    width: 80%;
+    font-size: 14px;
+    text-align: left;
+    text-indent: -1em;
+}
+
+.MP_list li input {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    float: right;
+    border-radius: 50%;
+    font-weight: 700;
+    line-height: 16px;
+}
+/* makePlan end */
+
+/* add_plan */
+.edit_plan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 999;
+    text-align: center;
+    display: none;
+}
+
+
+.edit_plan textarea {
+    width: 90%;
+    height: 100px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 2px dashed #f35d5d;
+    border-radius: 20px;
+    background-color: #ec5d759a;
+    padding: 10px;
+    font: 100 18px "Microsoft YaHei", Simsun, Arial, Helvetica, sans-serif;
+
+}
+
+.edit_plan input {
+    width: 50px;
+    height: 30px;
+    background-color: rgba(247, 111, 111, 0.849);
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    margin: 0 10px;
+}
+
+/* process begin */
+.XS .XS_process {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.process {
+    border-radius: 10%;
+    background-color: rgba(245, 135, 135, 0.8);
+    padding: 10px;
+}
+
+.process strong {
+    display: inline-block;
+    width: 100%;
+    font: 400 22px "Microsoft YaHei", Simsun, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+.process b {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    font: 100 16px/30px Simsun, "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.percent {
+    width: 90%;
+    margin: 5px auto;
+    border-bottom: 2px solid #f35d5d;
+    position: relative;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.percent img {
+    width: 80%;
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.percent p {
+    width: 210px;
+    height: 106px;
+    text-align: center;
+    color: #fd3131;
+    text-shadow: -7px -5px 7px #222;
+    font: 700 72px/106px Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    top: 50%;
+    margin-top: -53px;
+    left: 50%;
+    margin-left: -105px;
+}
+/* process end */

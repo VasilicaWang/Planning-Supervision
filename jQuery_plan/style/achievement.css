@@ -1,0 +1,101 @@
+/* calendar begin */
+#calendar {
+    width: 90%;
+    margin: 30px auto 20px;
+    overflow: hidden;
+    border: 2px solid #f07878;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(243, 140, 140, 0.5);
+    font-size: 14px;
+}
+
+#calendar h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+#calendar a {
+    width: 50px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    position: absolute;
+    top: 20px;
+    color: rgb(253, 86, 86);
+}
+
+#calendar .a1 {
+    left: 20px;
+}
+
+#calendar .a2 {
+    right: 20px;
+}
+
+#calendar .week {
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    border-bottom: 1px solid #f07878;
+    margin-bottom: 10px
+}
+
+#calendar .week li {
+    float: left;
+    width: 14.2%;
+    height: 30px;
+    text-align: center;
+    list-style: none;
+}
+
+#calendar .dateList {
+    overflow: hidden;
+    clear: both;
+}
+
+#calendar .dateList li {
+    float: left;
+    width: 13.6%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    list-style: none;
+    margin: 0.3%;
+    border-radius: 10px;
+}
+
+#calendar .dateList .sun {
+    color: red;
+}
+/* calendar end */
+
+/* 颜色说明 start */
+.colorMean {
+    margin-top: 0;
+    padding: 10px;
+}
+
+.colorMean .ul {
+    height: 20px;
+}
+
+.colorMean .ul li {
+    width: 9%;
+    height: 10px;
+    background-color: rgb(241, 123, 123);
+    list-style: none;
+    float: left;
+    margin: 0.5%;
+}
+
+.colorMean p {
+    width: 100%;
+    text-align: center;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+}
+/* 颜色说明 end */

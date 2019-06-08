@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/index.css">
+
+</head>
+
+<body>
+    <div class="XS">
+        <div class="XS_header">
+            <div class="header_title">
+                <img src="./images/title.png" alt="">
+            </div>
+        </div>
+        <div class="XS_nav">
+            <ul class="nav">
+                <li class="current"><a href="./index.html"><span>计划</span></a></li>
+                <li><a href="./achievement.html"><span>成就</span></a></li>
+                <li><a href="./notepad.html"><span>日志</span></a></li>
+            </ul>
+        </div>
+
+        <!-- 主页面计划列表 -->
+        <div class="XS_plan">
+            <div class="add_plan">制订计划</div>
+            <ul class="plan_list">
+                <p>点击<b>√</b>完成计划</p>
+            </ul>
+        </div>
+
+        <!-- 编辑计划列表 -->
+        <div class="make_plan">
+            <img src="./images/make_plan.png" alt="">
+            <div class="MP_add">添加计划</div>
+            <div class="MP_save">
+                <form method="POST">
+                    <input type="button" id="save" value="保存" name="save">
+                    <input type="button" id="nosave" value="取消" name="">
+                </form>
+            </div>
+            <ul class="MP_list">
+                <!-- <li>
+                    <span>每天喝8杯水</span>
+                    <input type="button" value="×">
+                </li> -->
+            </ul>
+        </div>
+
+        <!-- 编辑单条计划 -->
+        <div class="edit_plan">
+            <form action="">
+                <textarea name="" id="" cols="30" rows="10" autofocus="autofocus"></textarea><br />
+                <input type="submit" id="submit" value="提交">
+                <input type="button" id="cancel" value="取消">
+            </form>
+        </div>
+
+        <!-- 完成度百分数 -->
+        <div class="XS_process">
+            <div class="process">
+                <strong>今日完成度</strong>
+                <div class="percent">
+                    <img src="./images/percent_bj.png" alt="">
+                    <p>0%</p>
+                </div>
+                <b>革命还未开始，同志还需努力！</b>
+            </div>
+        </div>
+        <!-- 底部图片 -->
+        <div class="XS_footer">
+            <img src="./images/home_footer_bj.png" alt="">
+        </div>
+    </div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script src="./js/jquery-1.12.2.min.js"></script> -->
+<!-- <script src="./js/axios.min.js"></script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/base.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

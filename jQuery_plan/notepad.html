@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日志</title>
+    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/notepad.css">
+
+</head>
+
+<body>
+    <div class="XS">
+        <div class="XS_header">
+            <div class="header_title">
+                <img src="./images/title.png" alt="">
+            </div>
+        </div>
+        <div class="XS_nav">
+            <ul class="nav">
+                <li><a href="./index.html"><span>计划</span></a></li>
+                <li><a href="./achievement.html"><span>成就</span></a></li>
+                <li class="current"><a href="./notepad.html"><span>日志</span></a></li>
+            </ul>
+        </div>
+
+        <div id="record">
+            <!-- 点击添加日志 出现编辑日志 -->
+            <div class="add_record">
+                <span></span>
+                点击添加日志
+                <span></span>
+            </div>
+
+            <!-- 日志列表 -->
+            <ul class="journal">
+                <!-- <li class="journal_list">
+                    <div class="li_header">
+                        <h5>今天计划完成地不错</h5>
+                        <span>2018-02-22</span>
+                    </div>
+                    <div class="li_content" style="display: none">这是日志内容区，在主界面不会显示</div>
+                    <div class="li_id" style="display: none">这里是日志的id，在主页不会显示出来</div>
+                    <div class="edit">
+                        <input type="button" class="view" value="查看"><input type="button" class="delete" value="删除">
+                    </div>      
+                    <div class="imgResult" style="display: none"></div>                                                 
+                </li> -->
+                <div class="MR_example">
+                    <div class="li_header">
+                        <h5>eg：删除键可以删除日志哦！</h5>
+                        <span>2019-02-16</span>
+                    </div>
+                    <div class="edit">
+                        <input type="button" value="查看"><input type="button" value="删除">
+                    </div>
+                </div>
+            </ul>
+
+            <!-- 编辑日志界面 -->
+            <div class="make_record">
+                <img src="./images/make_plan.png" alt="">
+                <!-- 编辑日志 -->
+                <div class="MR_content">
+                    <!-- 日志标题 -->
+                    <div class="content_title">
+                        <input type="text" name="" id="" value="编辑标题" maxlength="16">
+                    </div>
+                    <div class="content_body">
+                        <!-- 日志内容 -->
+                        <div class="textarea" contenteditable="true"></div>
+
+                    </div>
+                    <!-- 日志图片 -->
+                    <div class="content_footer">
+                        <form class="container" enctype="multipart/form-data" method="post" id='formBox' name="form">
+                            <label for="chooseImage"><span>上传图片</span></label>
+                            <input type="file" id="chooseImage" name="" style="display: none" />
+                        </form>
+                        <div class="result"><!-- 图片 --></div>
+                    </div>
+                </div>
+
+                <div class="MR_save">
+                    <input type="submit" id="MR_save" value="保存">
+                    <input type="button" id="MR_nosave" value="取消">
+                </div>
+            </div>
+
+            <!-- 确定是否删除 -->
+            <div class="sureToDel">
+                <p>确定删除吗</p>
+                <input type="button" id="STDyes" value="确定">
+                <input type="button" id="STDno" value="取消">
+            </div>
+
+            <!-- 查看日志 -->
+            <div class="view_record">
+                <h3>日志标题多加点字试试......</h3>
+                <span>2019-03-16</span>
+                <hr />
+                <div class="view_content" ></div>
+                <hr />
+                <div class="view_img"></div>
+                <i>×</i>
+            </div>
+        </div>
+        <!-- 底部图片 -->
+        <div class="XS_footer">
+            <img src="./images/notepad_footer_bj.png" alt="">
+        </div>
+    </div>
+
+</body>
+<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script src="./js/jquery-1.12.2.min.js"></script>
+<script src="./js/axios.min.js"></script>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src="./js/base.js"></script>
+<script src="./js/notepad.js"></script>
+
+</html>
