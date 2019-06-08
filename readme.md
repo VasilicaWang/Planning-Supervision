@@ -18,6 +18,7 @@
         ![](https://github.com/VisilicaWang/Planning-Supervision/raw/master/2-notepad.gif) 
 
 ##本设计项目，实现了如下功能：
+
 -编辑计划：制定计划，增加或删除计划<br>
 -完成即可隐藏计划功能<br>
 -根据完成度计算百分数<br>
@@ -31,6 +32,7 @@
 
 
 ##项目启动过程：
+
 -启动mongo：D:\acabz\mongo\MongoDB\Server\4.0\bin\mongod --dbpath D:\acabz\mongo\data\db         连接数据库<br>
 -启动tomcat：startup.bat            可以暂时允许浏览器访问指定文件夹的文件<br>
 -启动node： cd express_plan          /              node app.js<br>
