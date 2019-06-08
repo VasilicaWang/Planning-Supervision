@@ -3,19 +3,19 @@
 -计划页是用户制定的计划列表，用户手动输入每条计划，并将计划保存到计划页面，\<br>
         +每当用户完成了一条计划，就可以将该条计划隐藏，项目会根据用户的完成情况自动计算百分数，\<br>
         +当用户需要更改计划时，也可以在制定计划页面对计划进行调整，删除或者是增加计划；\<br>
-        ![](https://github.com/VisilicaWang/Planning-Supervision/raw/master/1-plan.gif) <br>
+        ![计划页动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/gif-folder/1-plan.gif) <br>
 -成就页由一个日历组成，该日历上显示的是用户的每日计划完成情况，<br>
         +系统会自动获取用户的计划条数并为用户计算颜色块的跨度，根据计划页的百分数找出相应的颜色块并添加到日历上，<br>
         +这样，用户可以在成就页面上查看自己开始执行计划后，过去的每天的计划完成情况，<br>
         +如果完成情况较好，计划页的颜色跨度会比较小，用户也会获取极大的满足感；<br>
-        ![](https://github.com/VisilicaWang/Planning-Supervision/raw/master/3-achievement.PNG) <br>
+        ![成就页图片](https://github.com/VasilicaWang/Planning-Supervision/blob/master/gif-folder/3-achievement.PNG) <br>
 -日志页的作用主要是用户用于记录自己的心得体会，每天的感想或者是经历，<br>
         +每条日志的排列主要是根据日期进行排序，<br>
         +用户可以查看自己写过的日志，回忆自己从制定计划开始后的经历和体会；<br>
         +用户在编辑日志的同时也可以上传图片，<br>
         +比如说一张代表心情的图片、今天背单词时的学习图片、或者是今天去健身后拍下的图片，<br>
         +图片会以小图的形式进行上传，而用户在查看自己的日志时是以大图的形式进行展示。<br>
-        ![](https://github.com/VisilicaWang/Planning-Supervision/raw/master/2-notepad.gif) 
+        ![日志页动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/gif-folder/2-notepad.gif) 
 
 ##本设计项目，实现了如下功能：
 
