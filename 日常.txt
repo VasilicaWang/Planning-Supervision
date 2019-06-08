@@ -106,11 +106,6 @@ UMPC：是Ultra-mobile Personal Computer 的简写，
 
 
 
-启动mongo：D:\acabz\mongo\MongoDB\Server\4.0\bin\mongod --dbpath D:\acabz\mongo\data\db         连接数据库
-启动tomcat：startup.bat            可以暂时允许浏览器访问指定文件夹的文件
-启动node： cd express_plan          /              node app.js
-启动Robo3T：数据可视化工具
-
 
 
 
