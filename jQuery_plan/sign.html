@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册/登录</title>
+    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/sign.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="XS">
+        <div class="sign_header">
+            <img src="./images/title.png" alt="">
+        </div>
+        <div class="sign_content">
+            <h3>注册/登录</h3>
+            <!-- 登录 -->
+            <div class="signIn" style="display: block">
+                <div><span>用户名</span><input type="text" placeholder="请输入用户名">                </div>
+                <div><span>密码</span><input type="password" placeholder="请输入密码"></div>
+                <div><button>登录</button></div>
+                <div class="turn">没有账号？<a>注册</a></div>
+            </div>
+            <!-- 注册 -->
+            <div class="register" style="display: none">
+                <div><span>用户名</span><input type="text" placeholder="用户名不能超过六个字符"></div>
+                <div><span>密码</span><input type="password" placeholder="请输入密码"></div>
+                <div><span>确认密码</span><input type="password" placeholder="请确认密码"></div>
+                <div><span>注册协议</span><input type="checkbox"></div>
+                <div><button>注册</button></div>
+                <div class="turn">已有账号？<a>登录</a></div>
+            </div>
+
+        </div>
+        <!-- 底部图片 -->
+        <div class="XS_footer">
+            <img src="./images/sign_footer_bj.png" alt="">
+        </div>
+    </div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script src="./js/jquery-1.12.2.min.js"></script> -->
+<!-- <script src="./js/axios.min.js"></script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/sign.js"></script>
+
+</html>

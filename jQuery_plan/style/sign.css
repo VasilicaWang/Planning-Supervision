@@ -1,0 +1,74 @@
+/* .sign_header begin */
+.sign_header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.sign_header img {
+    width: 50%;
+}
+
+/* sign_content begin */
+.sign_content {
+    /* height: 250px; */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.sign_content h3 {
+    padding: 20px 0;
+    letter-spacing: 0.5em;
+    color: #ec5d75;
+    font: 400 24px "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+
+.sign_content>div {
+    width: 100%;
+    text-align: center;
+}
+
+.sign_content>div>div {
+    padding: 10px 0;
+    font: 400 14px "Microsoft YaHei";
+}
+
+.sign_content span {
+    display: inline-block;
+    width: 24%;
+    margin-right: 10px;
+    text-align-last: justify;
+}
+
+.sign_content input[type=text],
+input[type=password] {
+    width: 60%;
+    height: 30px;
+    outline: none;
+    border: 0;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.sign_content input[type=checkbox] {
+    width: 60%;
+    height: 20px;
+}
+
+.sign_content button {
+    width: 90%;
+    height: 30px;
+    outline: none;
+    border: 0;
+    background-color: rgb(238, 103, 103);
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
+.sign_content .turn {
+    color: #aaa;
+}

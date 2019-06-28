@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .current {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="lalala current">来藏一下试试</div>
+    <button class="show">点击显示</button>
+    <button class="hide">点击隐藏</button>
+</body>
+<script src="./js/jquery-1.12.2.min.js"></script>
+<script>
+    $(function() {
+        $('.show').on('click', function(){
+            $('.lalala').removeClass('current');
+        })
+        $('.hide').on('click', function(){
+            $('.lalala').addClass('current');
+        })
+    })
+</script>
+</html>

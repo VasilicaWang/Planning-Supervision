@@ -35,6 +35,7 @@ a,button{cursor:pointer;}
 }
 
 .XS>div {
+    width: 100%;
     margin-bottom: 20px;
 }
 
