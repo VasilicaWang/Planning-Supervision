@@ -15,20 +15,24 @@ db.once('open', function callback() { //监听一次打开
 });
 
 var planSchema = new mongoose.Schema({
-    plan_list: Array, //定义一个属性plan_list， 类型为Array
-    percent: {type: Number, default: 0},
-    achi: [{
-        achi_date: String,
-        achi_percent: Number,
-        achi_color: String
-    }],
-    notePad: [{
-        log_title: String,
-        log_content: String,
-        log_time: String,
-        log_img: Array,
-        log_num: String
-    }]
+    user: {
+        userName: String,
+        userpwd: String,
+        plan_list: Array, //定义一个属性plan_list， 类型为Array
+        percent: {type: Number, default: 0},
+        achi: [{
+            achi_date: String,
+            achi_percent: Number,
+            achi_color: String
+        }],
+        notePad: [{
+            log_title: String,
+            log_content: String,
+            log_time: String,
+            log_img: Array,
+            log_num: String
+        }]
+    }
 });
 
 mongoose.model('planData', planSchema); //将该Schema发布为Model

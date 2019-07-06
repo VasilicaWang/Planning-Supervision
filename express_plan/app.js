@@ -29,6 +29,63 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+/* 登录页start */
+/* 注册 */
+app.post('/newUser', function (req, res) {
+    const newName = req.body.userName;
+    const newpwd = req.body.userpwd;
+    TodoModel.find().then(result => {
+        if (result.length === 0) {
+            new TodoModel({
+                user: {
+                    userName: newName,
+                    userpwd: newpwd
+                }
+            }).save(function (err, todo, count) {
+                // console.log("内容", todo, "数量", count);
+            });
+            res.send('注册成功');
+        } else {
+            for (var i = 0; i < result.length; i++) {
+                if (result[i].user.userName == newName) {
+                    res.send('用户名已被使用');
+                    return false;
+                }
+            }
+            new TodoModel({
+                user: {
+                    userName: newName,
+                    userpwd: newpwd
+                }
+            }).save(function (err, todo, count) {
+                // console.log("内容", todo, "数量", count);
+            });
+            res.send('注册成功');
+        }
+    })
+})
+
+/* 登录 */
+app.post('/user', function(req, res) {
+    const name = req.body.name;
+    const password = req.body.password;
+    TodoModel.find().then(result => {
+        for(var i = 0; i < result.length; i++) {
+            if(result[i].user.userName == name) {
+                console.log(result[i])
+                if(result[i].user.userpwd == password) {
+                    res.send({message:'登录成功', name: name});
+                }else{
+                    res.send({message:'密码错误'});
+                }
+            }
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+})
+/* 登录页end */
+
 /* 计划页start */
 //获取主页计划列表项,将计划存入数据库
 app.post('/MPlist', function (req, res) {
@@ -71,7 +128,7 @@ app.get('/getPlanList', function (req, res) {
 
 // 删除数据库的对应计划项
 app.post('/delList', function (req, res) {
-    const del = req.body.data;//前端传过来的需要删除的计划内容
+    const del = req.body.data; //前端传过来的需要删除的计划内容
     TodoModel.updateOne({
         _id: '5ca1afe84a5d332ed899f1f9'
     }, {

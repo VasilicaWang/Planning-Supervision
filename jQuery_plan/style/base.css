@@ -56,6 +56,20 @@ a,button{cursor:pointer;}
 .header_title img {
     height: 100%;
 }
+
+.XS_header .user {
+    float: right;
+    color: #f5abab;
+    height: 100%;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.XS_header .user span {
+    color: #fc869a;
+    font-size: 16px;
+}
 /* header end */
 
 /* nav begin */
@@ -77,7 +91,7 @@ a,button{cursor:pointer;}
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
 }
 
-.XS_nav .nav .current a {
+.XS_nav .nav .current {
     font-size: 24px;
     font-weight: 700;
     color: #ec5d75;
