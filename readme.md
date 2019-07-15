@@ -1,6 +1,6 @@
 ## 计划监督项目包含了制定计划页、成就页、日志页。
 - 总的gif动图
- + ![注册登录总动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/new.gif) <br>
+        ![注册登录总动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/new.gif) <br>
 
 - 计划页是用户制定的计划列表，用户手动输入每条计划，并将计划保存到计划页面，<br>
         + 每当用户完成了一条计划，就可以将该条计划隐藏，项目会根据用户的完成情况自动计算百分数，<br>
