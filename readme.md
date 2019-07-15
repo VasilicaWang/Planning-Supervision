@@ -1,5 +1,5 @@
 ## 计划监督项目包含了制定计划页、成就页、日志页。
-- 总的gif动图
+- 总的gif动图<br>
         ![注册登录总动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/new.gif) <br>
 
 - 计划页是用户制定的计划列表，用户手动输入每条计划，并将计划保存到计划页面，<br>
