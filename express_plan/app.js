@@ -42,7 +42,10 @@ app.post('/newUser', function (req, res) {
             }).save(function (err, todo, count) {
                 // console.log("内容", todo, "数量", count);
             });
-            res.send('注册成功');
+            res.send({
+                message: '注册成功',
+                name: newName
+            });
         } else {
             for (var i = 0; i < result.length; i++) {
                 if (result[i].userName == newName) {
@@ -56,7 +59,10 @@ app.post('/newUser', function (req, res) {
             }).save(function (err, todo, count) {
                 // console.log("内容", todo, "数量", count);
             });
-            res.send('注册成功');
+            res.send({
+                message: '注册成功',
+                name: newName
+            });
         }
     })
 })

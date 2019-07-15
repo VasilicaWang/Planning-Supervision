@@ -26,9 +26,9 @@ $(function () {
                             userName: $('.userName').val(),
                             userpwd: $('.userpwd').val()
                         }).then(res => {
-                            if(res.data == '注册成功') {
-                                alert(res.data);
-                                location.href = "./index.html";
+                            if(res.data.message == '注册成功') {
+                                alert(res.data.message);
+                                location.href = "./index.html?userName="+res.data.name;
                             }else{
                                 alert(res.data);
                             }
