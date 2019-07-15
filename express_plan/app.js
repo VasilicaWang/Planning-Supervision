@@ -71,28 +71,50 @@ app.post('/newUser', function (req, res) {
 app.post('/user', function (req, res) {
     const name = req.body.name;
     const password = req.body.password;
-    TodoModel.find().then(result => {
-        for (var i = 0; i < result.length; i++) {
-            if (result[i].userName == name) {
-                // console.log(result[i])
-                if (result[i].userpwd == password) {
-                    res.send({
-                        message: '登录成功',
-                        name: name
-                    });
-                    return false;
-                } else {
-                    res.send({
-                        message: '密码错误'
-                    });
-                    return false;
-                }
+    TodoModel.find({
+        userName: name
+    }).then(result => {
+        if(result.length == 0){
+            res.send({message: '用户名不存在'});
+        }else {
+            if(result[0].userpwd == password){
+                res.send({
+                    message: '登录成功',
+                    name: name
+                });
+                return false;
+            }else {
+                res.send({message: '密码错误'})
             }
         }
-        res.send({
-            message: '用户名不存在'
-        })
+    }).catch(err => {
+        console.log(err);
+    })
+})
 
+/* 注销 */
+app.post('/delUser', function (req, res) {
+    const name = req.body.name;
+    const password = req.body.password;
+    TodoModel.find({
+        userName: name
+    }).then(result => {
+        if(result.length == 0){
+            res.send('用户名不存在');
+        }else {
+            if(result[0].userpwd == password){
+                TodoModel.remove({
+                    userName: name
+                }, (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+                res.send('注销成功')
+            }else {
+                res.send('密码错误')
+            }
+        }
     }).catch(err => {
         console.log(err);
     })

@@ -54,6 +54,7 @@ input[type=password] {
     font-size: 14px;
     padding-left: 5px;
     border-radius: 5px;
+    letter-spacing: 2px;
 }
 
 .sign_content input[type=checkbox] {
@@ -66,7 +67,7 @@ input[type=password] {
     height: 30px;
     outline: none;
     border: 0;
-    background-color: rgb(238, 103, 103);
+    background-color: rgba(247, 111, 111, 0.849);
     border-radius: 10px;
     color: #fff;
     letter-spacing: 3px;
@@ -75,4 +76,28 @@ input[type=password] {
 
 .sign_content .turn {
     color: #aaa;
+}
+
+.sign_content .signIn{
+    position: relative;
+}
+
+.deleteAccount {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 12px;
+    font-style: normal;
+    color: #bbb;
+}
+
+.cancellation button {
+    width: 20%;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    height: 26px;
+    margin: 0 6px;
 }

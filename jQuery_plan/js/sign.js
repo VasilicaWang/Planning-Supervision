@@ -14,6 +14,12 @@ $(function () {
         $('.confirmpwd').val('');
         $('.remind').text('');
     })
+    $('.deleteAccount').on('click', function() {
+        $('.signIn').css('display', 'none');
+        $('.cancellation').css('display', 'block');
+        $('.name').val('');
+        $('.password').val('');
+    })
 
     /* 格式验证 */ 
     /**注册验证：用户名验证、密码验证、确认密码验证、是否同意注册协议验证 */
@@ -50,14 +56,14 @@ $(function () {
         }        
     })
 
-    
+    /* 登录 */
     $('#signIn').on('click', function() {
         axios.post('http://localhost:3000/user', {
             name: $('.name').val(),
             password: $('.password').val()
         }).then(res => {
-            console.log(res.data)
             if(res.data.message == '登录成功'){
+                alert(res.data.message)
                 location.href = "./index.html?userName="+res.data.name;
             } else {
                 alert(res.data.message);
@@ -65,6 +71,33 @@ $(function () {
         }).catch(err => {
             console.log(err);
         })
+    });
+
+    /* 注销账户 */
+    $('#cancellation').on('click', function() {
+        axios.post('http://localhost:3000/delUser', {
+            name: $('.delName').val(),
+            password: $('.delpwd').val()
+        }).then(res => {
+            console.log(res.data)
+            if(res.data == '注销成功'){
+                console.log('ok')
+            } else {
+                alert(res.data);
+            }
+        }).catch(err => {
+            console.log(err);
+        })
+        $('.signIn').css('display', 'block');
+        $('.cancellation').css('display', 'none');
+        $('.delName').val('');
+        $('.delpwd').val('');
+    });
+    $('#cancel').on('click', function() {
+        $('.signIn').css('display', 'block');
+        $('.cancellation').css('display', 'none');
+        $('.delName').val('');
+        $('.delpwd').val('');
     })
 
 })

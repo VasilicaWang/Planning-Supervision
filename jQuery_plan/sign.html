@@ -26,6 +26,7 @@
                 <div><span>密码</span><input type="password" class="password" placeholder="请输入密码"></div>
                 <div><button id="signIn">登录</button></div>
                 <div class="turn">没有账号？<a>注册</a></div>
+                <em class="deleteAccount">注销账号</em>
             </div>
             <!-- 注册 -->
             <div class="register" style="display: none">
@@ -36,8 +37,15 @@
                 <div><button id="register">注册</button></div>
                 <div class="turn">已有账号？<a>登录</a></div>
             </div>
-
+            <!-- 注销 -->
+            <div class="cancellation" style="display: none">
+                <div><span>用户名</span><input type="text" class="delName" placeholder="请输入用户名"></div>
+                <div><span>密码</span><input type="password" class="delpwd" placeholder="请输入密码"></div>
+                <button id="cancellation">注销</button>
+                <button id="cancel">取消</button>
+            </div>    
         </div>
+        
         <!-- 底部图片 -->
         <div class="XS_footer">
             <img src="./images/sign_footer_bj.png" alt="">

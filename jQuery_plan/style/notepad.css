@@ -223,47 +223,6 @@
 }
 /* record end */
 
-/* 确定删除 begin */
-.sureToDel {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 150%;
-    margin-left: -50%;
-    margin-top: -100%;
-    background-color: rgba(255, 255, 255, 0.795);
-    z-index: 999;
-    text-align: center;
-    display: none;
-}
-
-.sureToDel p {
-    width: 70%;
-    height: 70px;
-    margin: 200px auto 20px;
-    border: 2px dashed rgb(242, 93, 93);
-    border-radius: 20px;
-    background-color: rgba(236, 93, 117, 0.801);
-    font: 400 24px/70px Simsun, Arial, Helvetica, sans-serif;
-    color: #fff;
-    letter-spacing: 3px;
-}
-
-.sureToDel input {
-    width: 50px;
-    height: 26px;
-    text-align: center;
-    background-color: rgba(247, 111, 111, 0.849);
-    border: 0;
-    border-radius: 10px;
-    color: #fff;
-    outline: none;
-    margin: 0 10px;
-    letter-spacing: 2px;
-}
-/* 确定删除 end */
-
 /* 查看日志 begin */
 .view_record {
     position: absolute;
