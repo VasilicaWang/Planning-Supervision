@@ -14,10 +14,12 @@ $(function () {
      *    向后台提交百分数-------完成
      *    process下面的温馨小提示-------完成
      */
-    
+
     // 获取数据库计划列表，添加到主页
-    axios.get("http://localhost:3000/getPlanList").then(res => {
-        var MPlist = res.data[0].plan_list;
+    axios.post("http://localhost:3000/getPlanList", {
+        userName: $('#userName').text()
+    }).then(res => {
+        var MPlist = res.data;
         for (var i = 0; i < MPlist.length; i++) {
             var addPlanLi = '<li><span>' + MPlist[i] + '</span><strong>√</strong></li>';
             $(".XS_plan .plan_list").append(addPlanLi);
@@ -33,7 +35,8 @@ $(function () {
         var x = 0;
         if (nowHour === 00 && nowMinute === 00) {
             axios.post('http://localhost:3000/upPercent', {
-                data: x
+                percent: x,
+                userName: $('#userName').text()
             }).then(res => {
                 var x = res.data;
                 $(".process b").text("革命计划尚未成熟！");
@@ -74,7 +77,8 @@ $(function () {
         var x = (i / $(this).parent().parent().find("li").length) * 100;
         // 向后端提交更新百分数
         axios.post('http://localhost:3000/upPercent', {
-            data: x
+            percent: x,
+            userName: $('#userName').text()
         }).then(res => {
             var x = res.data;
             // process下面的小提示
@@ -119,17 +123,18 @@ $(function () {
     });
 
     //计划页点击删除计划
-    $(".MP_list").on("click", "input", function () {// 点击×号，删除对应列
-        $(this).parent().remove();// 删除编辑计划页面对应列
-        var delList = $(this).parent().find('span').text();//删除的计划的具体内容
-        $("#nosave").on("click", function () {//取消删除
+    $(".MP_list").on("click", "input", function () { // 点击×号，删除对应列
+        $(this).parent().remove(); // 删除编辑计划页面对应列
+        var delList = $(this).parent().find('span').text(); //删除的计划的具体内容
+        $("#nosave").on("click", function () { //取消删除
             return false
         });
-        $("#save").on("click", function () {//确认删除
+        $("#save").on("click", function () { //确认删除
             // 删除数据库相应列表项
             axios.post("http://localhost:3000/delList", {
-                data: delList
-            }).then(res => {//删除计划主页对应计划
+                data: delList,
+                userName: $('#userName').text()
+            }).then(res => { //删除计划主页对应计划
                 $(".plan_list").find("li").find('span:contains("' + res.data + '")').parent().remove();
             });
         })
@@ -177,7 +182,8 @@ $(function () {
 
             // 向后端提交用户计划数据
             axios.post('http://localhost:3000/MPlist', {
-                data: newMPlist
+                planList: newMPlist,
+                userName: $('#userName').text()
             }).then(res => {
                 // 将制定计划页里的计划列添加到首页的计划表里
                 for (var i = 0; i < res.data.length; i++) {

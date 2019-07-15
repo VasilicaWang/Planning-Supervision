@@ -37,26 +37,22 @@ app.post('/newUser', function (req, res) {
     TodoModel.find().then(result => {
         if (result.length === 0) {
             new TodoModel({
-                user: {
-                    userName: newName,
-                    userpwd: newpwd
-                }
+                userName: newName,
+                userpwd: newpwd
             }).save(function (err, todo, count) {
                 // console.log("内容", todo, "数量", count);
             });
             res.send('注册成功');
         } else {
             for (var i = 0; i < result.length; i++) {
-                if (result[i].user.userName == newName) {
+                if (result[i].userName == newName) {
                     res.send('用户名已被使用');
                     return false;
                 }
             }
             new TodoModel({
-                user: {
-                    userName: newName,
-                    userpwd: newpwd
-                }
+                userName: newName,
+                userpwd: newpwd
             }).save(function (err, todo, count) {
                 // console.log("内容", todo, "数量", count);
             });
@@ -66,20 +62,31 @@ app.post('/newUser', function (req, res) {
 })
 
 /* 登录 */
-app.post('/user', function(req, res) {
+app.post('/user', function (req, res) {
     const name = req.body.name;
     const password = req.body.password;
     TodoModel.find().then(result => {
-        for(var i = 0; i < result.length; i++) {
-            if(result[i].user.userName == name) {
-                console.log(result[i])
-                if(result[i].user.userpwd == password) {
-                    res.send({message:'登录成功', name: name});
-                }else{
-                    res.send({message:'密码错误'});
+        for (var i = 0; i < result.length; i++) {
+            if (result[i].userName == name) {
+                // console.log(result[i])
+                if (result[i].userpwd == password) {
+                    res.send({
+                        message: '登录成功',
+                        name: name
+                    });
+                    return false;
+                } else {
+                    res.send({
+                        message: '密码错误'
+                    });
+                    return false;
                 }
             }
         }
+        res.send({
+            message: '用户名不存在'
+        })
+
     }).catch(err => {
         console.log(err);
     })
@@ -89,48 +96,41 @@ app.post('/user', function(req, res) {
 /* 计划页start */
 //获取主页计划列表项,将计划存入数据库
 app.post('/MPlist', function (req, res) {
-    const plan_list = req.body.data;
-    TodoModel.find().then(result => {
-        if (result.length === 0) {
-            new TodoModel({
-                plan_list: plan_list
-            }).save(function (err, todo, count) {
-                // console.log("内容", todo, "数量", count);
-            });
-        } else {
-            TodoModel.updateOne({
-                _id: result[0]._id
-            }, {
-                $push: {
-                    plan_list: {
-                        $each: plan_list
-                    }
-                }
-            }, (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            })
+    const findName = req.body.userName;
+    const plan_list = req.body.planList;
+    console.log(plan_list)
+    TodoModel.updateOne({
+        userName: findName
+    }, {
+        $push: {
+            plan_list: {
+                $each: plan_list
+            }
         }
-    });
-    res.send(req.body.data);
+    }, (err) => {
+        if (err) {
+            console.log(err);
+        }
+    })
+    res.send(plan_list);
 });
 
 // 获取数据库计划列表,将数据传到前台
-app.get('/getPlanList', function (req, res) {
+app.post('/getPlanList', function (req, res) {
+    const findName = req.body.userName;
     TodoModel.find({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }).then(result => {
-        // console.log('result:' + result);
-        res.send(result);
+        res.send(result[0].plan_list);
     });
 })
 
 // 删除数据库的对应计划项
 app.post('/delList', function (req, res) {
+    const findName = req.body.userName;
     const del = req.body.data; //前端传过来的需要删除的计划内容
     TodoModel.updateOne({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }, {
         $pull: {
             plan_list: del
@@ -146,8 +146,11 @@ app.post('/delList', function (req, res) {
 //获取主页百分数 更新数据库百分数
 app.post('/upPercent', function (req, res) {
     // console.log(req.body.data);
-    var percent = req.body.data;
-    TodoModel.find().then(result => {
+    const percent = req.body.percent;
+    const findName = req.body.userName;
+    TodoModel.find({
+        userName: findName
+    }).then(result => {
         // console.log(result[0]._id);
         if (result.length === 0) {
             new TodoModel({
@@ -157,7 +160,8 @@ app.post('/upPercent', function (req, res) {
             });
         } else {
             TodoModel.updateOne({
-                _id: result[0]._id
+                // _id: result[0]._id
+                userName: findName
             }, {
                 percent: percent
             }, (err) => {
@@ -167,7 +171,7 @@ app.post('/upPercent', function (req, res) {
             })
         }
     });
-    const per = req.body.data.toString();
+    const per = req.body.percent.toString();
     res.send(per);
 });
 /* 计划页end */
@@ -176,68 +180,57 @@ app.post('/upPercent', function (req, res) {
 
 /* 成就页start */
 //获取百分数和计划项目数
-app.get('/getPerandlist', function (req, res) {
+app.post('/getPerandlist', function (req, res) {
+    const findName = req.body.userName;
     TodoModel.find({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }).then(result => {
-        // console.log('result:' + result);
-        res.send(result);
+        // console.log('result:' + result[0].percent, result[0].plan_list.length);
+        res.send({
+            percent: result[0].percent,
+            listNum: result[0].plan_list.length
+        });
     });
 });
 
 //将日期百分数颜色上传到数据库
 app.post('/storage', function (req, res) {
+    const findName = req.body.userName;
     const achi_date = req.body.achiDate;
     const achi_percent = req.body.achiPercent;
     const achi_color = req.body.achiColor;
-    // console.log(achi_date);
-    TodoModel.find().then(result => {
-        // console.log(result[0]._id);
-        if (result.length === 0) {
-            new TodoModel({
-                achi: {
-                    achi_date: achi_date,
-                    achi_percent: achi_percent,
-                    achi_color: achi_color
-                }
-            }).save(function (err, todo, count) {
-                // console.log("内容", todo, "数量", count);
-            });
-        } else {
-            //如果数据库里有当天日期的相关数据，就更新
-            TodoModel.updateOne({
-                // _id: result[0]._id
-                _id: '5ca1afe84a5d332ed899f1f9'
-            }, {
-                $push: {
-                    achi: {
-                        achi_date: achi_date,
-                        achi_percent: achi_percent,
-                        achi_color: achi_color
-                    }
-                }
-                /* $pull: {
-                    achi: {
-                        achi_date: '2019/04/15'
-                    }
-                } */
-            }, (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            })
+    //更新数据库里当天日期的相关数据
+    TodoModel.updateOne({
+        userName: findName
+    }, {
+        $push: {
+            achi: {
+                achi_date: achi_date,
+                achi_percent: achi_percent,
+                achi_color: achi_color
+            }
         }
-    });
+        /* $pull: {
+            achi: {
+                achi_date: '2019/04/15'
+            }
+        } */
+    }, (err) => {
+        if (err) {
+            console.log(err);
+        }
+    })
     res.send(achi_color);
 });
 
 //将数据库成就页数据发送到前台
-app.get('/getAchi', function (req, res) {
+app.post('/getAchi', function (req, res) {
+    const findName = req.body.userName;
     TodoModel.find({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }).then(result => {
-        // console.log('result:' + result);
-        res.send(result);
+        // console.log('result:' + result[0].achi);
+        res.send(result[0].achi);
     });
 });
 /* 成就页end */
@@ -247,64 +240,50 @@ app.get('/getAchi', function (req, res) {
 /* 日志页start */
 //获取日志相关数据 保存到数据库
 app.post('/addRecord', function (req, res) {
-    var log_title = req.body.logTitle;
-    var log_content = req.body.logContent;
-    var log_time = req.body.logTime;
-    var log_img = req.body.logImg;
-    var log_num = req.body.logNum;
+    const findName = req.body.userName;
+    const log_title = req.body.logTitle;
+    const log_content = req.body.logContent;
+    const log_time = req.body.logTime;
+    const log_img = req.body.logImg;
+    const log_num = req.body.logNum;
     // console.log(log_title, log_content, log_time);
-    TodoModel.find().then(result => {
-        // console.log(result[0]._id);
-        if (result.length === 0) {
-            new TodoModel({
-                notePad: {
-                    log_title: log_title,
-                    log_content: log_content,
-                    log_time: log_time,
-                    log_img: log_img,
-                    log_num: log_num
-                }
-            }).save(function (err, todo, count) {
-                // console.log("内容", todo, "数量", count);
-            });
-        } else {
-            TodoModel.updateOne({
-                _id: result[0]._id
-            }, {
-                $push: {
-                    notePad: {
-                        log_title: log_title,
-                        log_content: log_content,
-                        log_time: log_time,
-                        log_img: log_img,
-                        log_num: log_num
-                    }
-                }
-            }, (err) => {
-                if (err) {
-                    console.log(err);
-                }
-            })
+    TodoModel.updateOne({
+        userName: findName
+    }, {
+        $push: {
+            notePad: {
+                log_title: log_title,
+                log_content: log_content,
+                log_time: log_time,
+                log_img: log_img,
+                log_num: log_num
+            }
         }
-    });
+    }, (err) => {
+        if (err) {
+            console.log(err);
+        }
+    })
 })
 
 //获取数据库日志数据 发送到前台
-app.get('/getRecordList', function (req, res) {
+app.post('/getRecordList', function (req, res) {
+    const findName = req.body.userName;
     TodoModel.find({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }).then(result => {
-        // console.log('result:' + result);
-        res.send(result);
+        // console.log('result:' + result[0].notePad);
+        res.send(result[0].notePad);
     });
 });
 
 //删除数据库日志项目
 app.post('/delRecord', function (req, res) {
+    const findName = req.body.userName;
     const del = req.body.data;
     // console.log(del);
     TodoModel.updateOne({
-        _id: '5ca1afe84a5d332ed899f1f9'
+        userName: findName
     }, {
         $pull: {
             notePad: {

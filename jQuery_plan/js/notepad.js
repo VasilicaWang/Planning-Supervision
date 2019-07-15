@@ -15,8 +15,11 @@ $(function () {
      */
 
     // 获取数据库日志列表 添加到主页
-    axios.get("http://localhost:3000/getRecordList").then(res => {
-        var RecordList = res.data[0].notePad;
+    axios.post("http://localhost:3000/getRecordList", {
+        userName: $('#userName').text()
+    }).then(res => {
+        console.log(res.data)
+        var RecordList = res.data;
         for (var i = 0; i < RecordList.length; i++) {
             var title = RecordList[i].log_title;
             var content = RecordList[i].log_content;
@@ -152,6 +155,7 @@ $(function () {
 
         // 将标题、内容、时间 添加到数据库
         axios.post("http://localhost:3000/addRecord", {
+            userName: $('#userName').text(),
             logTitle: recordTitle,
             logContent: recordContent,
             logTime: recordTime,
@@ -236,6 +240,7 @@ $(function () {
 
             // 请求数据库日志数据，删除对应日志
             axios.post("http://localhost:3000/delRecord", {
+                userName: $('#userName').text(),
                 data: recordNum
             }).then(res => {
                 // console.log(res.data);

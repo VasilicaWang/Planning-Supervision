@@ -3,13 +3,19 @@ $(function () {
     $('.sign_content').on('click', '.signIn .turn', function () {
         $('.signIn').css('display', 'none');
         $('.register').css('display', 'block');
+        $('.name').val('');
+        $('.password').val('');
     })
     $('.sign_content').on('click', '.register .turn', function () {
         $('.register').css('display', 'none');
         $('.signIn').css('display', 'block');
+        $('.userName').val('');
+        $('.userpwd').val('');
+        $('.confirmpwd').val('');
+        $('.remind').text('');
     })
 
-    /* 格式验证 */
+    /* 格式验证 */ 
     /**注册验证：用户名验证、密码验证、确认密码验证、是否同意注册协议验证 */
     $('#register').on('click', function () {
         if ($('.userName').val().length <= 6) {
@@ -28,7 +34,8 @@ $(function () {
                             }
                         }).catch(err => {
                             console.log(err);
-                        })
+                        });
+                        $('.remind').text() = null;
                     } else {
                         $('.remind').text('注册请勾选注册协议');
                     }
@@ -43,6 +50,7 @@ $(function () {
         }        
     })
 
+    
     $('#signIn').on('click', function() {
         axios.post('http://localhost:3000/user', {
             name: $('.name').val(),
