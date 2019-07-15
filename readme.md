@@ -1,4 +1,4 @@
-##计划监督项目包含了制定计划页、成就页、日志页。
+## 计划监督项目包含了制定计划页、成就页、日志页。
 - 总的gif动图
  + ![注册登录总动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/new.gif) <br>
 
@@ -19,7 +19,7 @@
         + 图片会以小图的形式进行上传，而用户在查看自己的日志时是以大图的形式进行展示。<br>
         ![日志页动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/2-notepad.gif) 
 
-##本设计项目，实现了如下功能：
+## 本设计项目，实现了如下功能：
 
 - 编辑计划：制定计划，增加或删除计划<br>
 - 完成即可隐藏计划功能<br>
@@ -33,7 +33,7 @@
 
 
 
-##项目启动过程：
+## 项目启动过程：
 
 - 启动mongo：D:\acabz\mongo\MongoDB\Server\4.0\bin\mongod --dbpath D:\acabz\mongo\data\db         连接数据库<br>
 - 启动tomcat：startup.bat            可以暂时允许浏览器访问指定文件夹的文件<br>
