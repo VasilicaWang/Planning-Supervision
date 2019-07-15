@@ -76,7 +76,7 @@ $(function () {
                         var nowYear = nowDate.getFullYear(),
                             nowMonth = ("0" + (nowDate.getMonth() + 1)).slice(-2),
                             nowDay = ("0" + (nowDate.getDate())).slice(-2);
-                        if (nowYear == todayYear && nowMonth == todayMonth && nowDay == todayDay && nowHour == 9 && nowMinute == 44 && nowSecond == 0) {
+                        if (nowYear == todayYear && nowMonth == todayMonth && nowDay == todayDay && nowHour == 10 && nowMinute == 54 && nowSecond == 0) {
                             console.log("ok");
                             // 获取数据库百分数以及计划项目数
                             axios.post("http://localhost:3000/getPerandlist", {
