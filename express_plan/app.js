@@ -3,8 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const TodoModel = mongoose.model('planData');
+const path = require('path');
 const URL = require('url');
 const app = express();
+
+app.use(express.static(path.join(__dirname, '../', 'jQuery_plan')));
 
 app.use(express.json());
 app.use(express.urlencoded({
