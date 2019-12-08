@@ -1,6 +1,6 @@
 ## 计划监督项目包含了制定计划页、成就页、日志页。
 - 总的gif动图<br>
-        ![总gif动图](https://github.com/VasilicaWang/Planning-Supervision/blob/master/new.gif) <br>
+        ![总gif动图](./new.gif) <br>
 
 - 注册登录页：用于注册、登录、注销用户<br>
         + 根据用户名对用户的相应数据进行增删改查等并且不会影响其他用户<br>
